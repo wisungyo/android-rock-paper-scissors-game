@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/rock_paper_scissors"
+        android:textAlignment="textStart"
+        android:textColor="@color/mainWhite"
+        android:textSize="58sp"
+        app:layout_constraintEnd_toEndOf="@id/gl_vertical_2"
+        app:layout_constraintStart_toStartOf="@id/gl_vertical_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_vertical_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <View
+        android:id="@+id/v_rectangle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/ic_rounded_rectangle"
+        android:elevation="2dp"
+        android:translationZ="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal_1" />
+
+    <TextView
+        android:id="@+id/tv_you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/you"
+        android:textColor="@color/mainWhite"
+        android:textSize="18sp"
+        android:translationZ="8dp"
+        app:layout_constraintBottom_toTopOf="@id/v_rectangle"
+        app:layout_constraintEnd_toEndOf="@id/iv_you_rock"
+        app:layout_constraintStart_toStartOf="@id/iv_you_rock" />
+
+    <ImageView
+        android:id="@+id/iv_you_rock"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:background="@drawable/ic_stroke"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/you_s_rock_icon"
+        android:padding="16dp"
+        android:src="@drawable/ic_rock"
+        android:translationZ="6dp"
+        app:layout_constraintBottom_toTopOf="@id/iv_you_paper"
+        app:layout_constraintStart_toStartOf="@id/gl_vertical_1"
+        app:layout_constraintTop_toTopOf="@id/v_rectangle" />
+
+    <ImageView
+        android:id="@+id/iv_you_paper"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:background="@drawable/ic_stroke"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/you_s_paper_icon"
+        android:padding="16dp"
+        android:src="@drawable/ic_paper"
+        android:translationZ="6dp"
+        app:layout_constraintBottom_toTopOf="@id/iv_you_scissors"
+        app:layout_constraintStart_toStartOf="@id/gl_vertical_1"
+        app:layout_constraintTop_toBottomOf="@id/iv_you_rock" />
+
+    <ImageView
+        android:id="@+id/iv_you_scissors"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:background="@drawable/ic_stroke"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/you_s_scissors_icon"
+        android:padding="16dp"
+        android:src="@drawable/ic_scissors"
+        android:translationZ="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/v_rectangle"
+        app:layout_constraintStart_toStartOf="@id/gl_vertical_1"
+        app:layout_constraintTop_toBottomOf="@id/iv_you_paper" />
+
+    <TextView
+        android:id="@+id/tv_com"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/com"
+        android:textColor="@color/mainWhite"
+        android:textSize="18sp"
+        android:translationZ="8dp"
+        app:layout_constraintBottom_toTopOf="@id/v_rectangle"
+        app:layout_constraintEnd_toEndOf="@id/iv_com_rock"
+        app:layout_constraintStart_toStartOf="@id/iv_com_rock" />
+
+    <ImageView
+        android:id="@+id/iv_com_rock"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:background="@drawable/ic_stroke"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/com_s_rock_icon"
+        android:padding="16dp"
+        android:src="@drawable/ic_rock"
+        android:translationZ="6dp"
+        app:layout_constraintBottom_toTopOf="@id/iv_com_paper"
+        app:layout_constraintEnd_toEndOf="@id/gl_vertical_2"
+        app:layout_constraintTop_toBottomOf="@id/tv_com" />
+
+    <ImageView
+        android:id="@+id/iv_com_paper"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:background="@drawable/ic_stroke"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/com_s_paper_icon"
+        android:padding="16dp"
+        android:src="@drawable/ic_paper"
+        android:translationZ="6dp"
+        app:layout_constraintBottom_toTopOf="@id/iv_com_scissors"
+        app:layout_constraintEnd_toEndOf="@id/gl_vertical_2"
+        app:layout_constraintTop_toBottomOf="@id/iv_com_rock" />
+
+    <ImageView
+        android:id="@+id/iv_com_scissors"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:background="@drawable/ic_stroke"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/com_s_scissors_icon"
+        android:padding="16dp"
+        android:src="@drawable/ic_scissors"
+        android:translationZ="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/v_rectangle"
+        app:layout_constraintEnd_toEndOf="@id/gl_vertical_2"
+        app:layout_constraintTop_toBottomOf="@id/iv_com_paper" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/vs"
+        android:textColor="@color/mainBlue"
+        android:textSize="48sp"
+        android:translationZ="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/v_rectangle"
+        app:layout_constraintEnd_toEndOf="@id/v_rectangle"
+        app:layout_constraintStart_toStartOf="@id/v_rectangle"
+        app:layout_constraintTop_toTopOf="@id/v_rectangle" />
+
+    <TextView
+        android:id="@+id/tv_credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/wisungyo"
+        android:textColor="@color/mainBlue"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl_vertical_1"
+        app:layout_constraintTop_toBottomOf="@id/v_rectangle" />
+
+    <TextView
+        android:id="@+id/tv_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/reset"
+        android:textColor="@color/mainBlue"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gl_vertical_2"
+        app:layout_constraintTop_toBottomOf="@id/v_rectangle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

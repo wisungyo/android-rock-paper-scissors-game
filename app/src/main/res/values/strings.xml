@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Rock Paper Scissors</string>
+    <string name="element_in_the_corner">Elemen in the corner</string>
+    <string name="rock_paper_scissors">Rock\nPaper\nScissors</string>
+    <string name="you">YOU</string>
+    <string name="you_s_rock_icon">You\'s rock icon</string>
+    <string name="you_s_paper_icon">You\'s paper icon</string>
+    <string name="you_s_scissors_icon">You\'s scissors icon</string>
+    <string name="com_s_rock_icon">Com\'s rock icon</string>
+    <string name="com_s_paper_icon">Com\'s paper icon</string>
+    <string name="reset">Reset</string>
+    <string name="com_s_scissors_icon">Com\'s scissors icon</string>
+    <string name="com">COM</string>
+    <string name="draw">DRAW</string>
+    <string name="win">WIN</string>
+    <string name="lose">LOSE</string>
+    <string name="vs">VS</string>
+    <string name="wisungyo">Made by Wisungyo</string>
+</resources>
