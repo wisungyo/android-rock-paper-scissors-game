@@ -6,4 +6,6 @@
     <color name="mainBlue">#83A8C2</color>
     <color name="secondaryBlue">#D7E6ED</color>
     <color name="mainWhite">#FAFAFA</color>
+    <color name="alertRed">#F14F5D</color>
+    <color name="alertGreen">#3CB878</color>
 </resources>

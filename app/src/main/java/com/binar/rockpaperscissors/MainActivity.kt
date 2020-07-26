@@ -1,6 +1,7 @@
 package com.binar.rockpaperscissors
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,38 +25,47 @@ class MainActivity : AppCompatActivity() {
         // REMOVE ACTION BAR
         this.supportActionBar?.hide()
 
+        // CLICKABLE EVENT LISTENERS
         binding.ivYouRock.setOnClickListener {
             you = "rock"
             tv_reset.visibility = View.VISIBLE
+            tv_alert.visibility = View.GONE
             changeYouIcons(you)
         }
         binding.ivYouPaper.setOnClickListener {
             you = "paper"
             tv_reset.visibility = View.VISIBLE
+            tv_alert.visibility = View.GONE
             changeYouIcons(you)
         }
         binding.ivYouScissors.setOnClickListener {
             you = "scissors"
             tv_reset.visibility = View.VISIBLE
+            tv_alert.visibility = View.GONE
             changeYouIcons(you)
         }
         binding.tvReset.setOnClickListener {
             resetYouIcons()
             resetComIcons()
             tv_status.setText(R.string.vs)
+            tv_status.setTextColor(Color.parseColor("#83A8C2"))
             tv_reset.visibility = View.GONE
+            tv_alert.visibility = View.GONE
         }
         binding.ivComRock.setOnClickListener {
             vibrate()
             alertTouchingComIcons()
+            tv_alert.visibility = View.VISIBLE
         }
         binding.ivComPaper.setOnClickListener {
             vibrate()
             alertTouchingComIcons()
+            tv_alert.visibility = View.VISIBLE
         }
         binding.ivComScissors.setOnClickListener {
             vibrate()
             alertTouchingComIcons()
+            tv_alert.visibility = View.VISIBLE
         }
     }
 
@@ -71,6 +81,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun alertTouchingComIcons() {
+        tv_status.setText("") // show status empty string
         // ALERT FOR YOU ICONS
         iv_you_rock.setImageResource(R.drawable.ic_rock_green)
         iv_you_rock.setBackgroundResource(R.drawable.ic_stroke_green)
@@ -166,14 +177,17 @@ class MainActivity : AppCompatActivity() {
         when (result) {
             "draw" -> {
                 tv_status.setText(R.string.draw)
+                tv_status.setTextColor(Color.parseColor("#83A8C2"))
                 Log.d("RESULT", "You chose ${you}, COM chose ${com}. DRAW !!")
             }
             "win" -> {
                 tv_status.setText(R.string.win)
+                tv_status.setTextColor(Color.parseColor("#3CB878"))
                 Log.d("RESULT", "You chose ${you}, COM chose ${com}. YOU WIN !!")
             }
             "lose" -> {
                 tv_status.setText(R.string.lose)
+                tv_status.setTextColor(Color.parseColor("#F14F5D"))
                 Log.d("RESULT", "You chose ${you}, COM chose ${com}. YOU LOSE !!")
             }
             else -> Log.d("ERROR", "Neither Win Lose or Draw")
