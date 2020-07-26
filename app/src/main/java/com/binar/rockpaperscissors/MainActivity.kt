@@ -1,7 +1,10 @@
 package com.binar.rockpaperscissors
 
+import android.content.Context
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Vibrator
 import android.util.Log
 import android.view.View
 import com.binar.rockpaperscissors.databinding.ActivityMainBinding
@@ -42,17 +45,63 @@ class MainActivity : AppCompatActivity() {
             tv_status.setText(R.string.vs)
             tv_reset.visibility = View.GONE
         }
+        binding.ivComRock.setOnClickListener {
+            vibrate()
+            alertTouchingComIcons()
+        }
+        binding.ivComPaper.setOnClickListener {
+            vibrate()
+            alertTouchingComIcons()
+        }
+        binding.ivComScissors.setOnClickListener {
+            vibrate()
+            alertTouchingComIcons()
+        }
+    }
+
+    private fun vibrate() {
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (vibrator.hasVibrator()) {
+            if (Build.VERSION.SDK_INT >= 26) { // check if SDK is higher that SDK 26. This uses new way for vibration
+                vibrator.vibrate(android.os.VibrationEffect.createOneShot(300, android.os.VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                vibrator.vibrate(300) // vibration for lower than SDK 26
+            }
+        }
+    }
+
+    private fun alertTouchingComIcons() {
+        // ALERT FOR YOU ICONS
+        iv_you_rock.setImageResource(R.drawable.ic_rock_green)
+        iv_you_rock.setBackgroundResource(R.drawable.ic_stroke_green)
+        iv_you_paper.setImageResource(R.drawable.ic_paper_green)
+        iv_you_paper.setBackgroundResource(R.drawable.ic_stroke_green)
+        iv_you_scissors.setImageResource(R.drawable.ic_scissors_green)
+        iv_you_scissors.setBackgroundResource(R.drawable.ic_stroke_green)
+        // ALERT FOR COM ICONS
+        iv_com_rock.setImageResource(R.drawable.ic_rock_red)
+        iv_com_rock.setBackgroundResource(R.drawable.ic_stroke_red)
+        iv_com_paper.setImageResource(R.drawable.ic_paper_red)
+        iv_com_paper.setBackgroundResource(R.drawable.ic_stroke_red)
+        iv_com_scissors.setImageResource(R.drawable.ic_scissors_red)
+        iv_com_scissors.setBackgroundResource(R.drawable.ic_stroke_red)
     }
 
     private fun resetYouIcons() {
+        iv_you_rock.setImageResource(R.drawable.ic_rock)
         iv_you_rock.setBackgroundResource(R.drawable.ic_stroke)
+        iv_you_paper.setImageResource(R.drawable.ic_paper)
         iv_you_paper.setBackgroundResource(R.drawable.ic_stroke)
+        iv_you_scissors.setImageResource(R.drawable.ic_scissors)
         iv_you_scissors.setBackgroundResource(R.drawable.ic_stroke)
     }
 
     private fun resetComIcons() {
+        iv_com_rock.setImageResource(R.drawable.ic_rock)
         iv_com_rock.setBackgroundResource(R.drawable.ic_stroke)
+        iv_com_paper.setImageResource(R.drawable.ic_paper)
         iv_com_paper.setBackgroundResource(R.drawable.ic_stroke)
+        iv_com_scissors.setImageResource(R.drawable.ic_scissors)
         iv_com_scissors.setBackgroundResource(R.drawable.ic_stroke)
     }
 
