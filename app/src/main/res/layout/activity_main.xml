@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="@id/tv_title"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:text="@string/alert_selecting_com"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_vertical_1"
@@ -230,7 +230,7 @@
         android:text="@string/reset"
         android:textColor="@color/mainBlue"
         android:textSize="16sp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/gl_vertical_2"
         app:layout_constraintTop_toBottomOf="@id/v_rectangle" />
