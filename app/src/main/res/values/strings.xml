@@ -12,8 +12,8 @@
     <string name="com_s_scissors_icon">Com\'s scissors icon</string>
     <string name="com">COM</string>
     <string name="draw">DRAW</string>
-    <string name="win">WIN</string>
-    <string name="lose">LOSE</string>
+    <string name="win">YOU\nWIN</string>
+    <string name="lose">YOU\nLOSE</string>
     <string name="vs">VS</string>
     <string name="wisungyo">Made by Wisungyo</string>
     <string name="alert_selecting_com">ALERT : Do not select COM side. Select You side.</string>

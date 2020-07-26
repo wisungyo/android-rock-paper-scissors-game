@@ -203,6 +203,7 @@
         android:textColor="@color/mainBlue"
         android:textSize="48sp"
         android:translationZ="8dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/v_rectangle"
         app:layout_constraintEnd_toEndOf="@id/v_rectangle"
         app:layout_constraintStart_toStartOf="@id/v_rectangle"
